@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Forecast</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌤 Real-Time Weather Forecast</h1>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter City Name">
+
+        <button id="searchBtn">🔍 Search</button>
+
+        <button id="locationBtn">📍 Current Location</button>
+
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display:none;">
+        ⏳ Loading weather data...
+    </div>
+
+    <!-- Weather Card -->
+    <div class="weather-card">
+
+        <h2 id="cityName">City Name</h2>
+
+        <img id="weatherIcon" src="" alt="Weather Icon">
+
+        <h1 id="temperature">--°C</h1>
+
+        <p id="description">Weather Description</p>
+
+        <p id="dateTime"></p>
+
+        <div class="sun-info">
+            <p>🌅 Sunrise: <span id="sunrise">--</span></p>
+            <p>🌇 Sunset: <span id="sunset">--</span></p>
+        </div>
+
+        <div class="detail-box">
+            <h3>🌍 Air Quality</h3>
+            <p id="aqi">--</p>
+        </div>
+
+        <div class="details">
+
+            <div class="detail-box">
+                <h3>💧 Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>💨 Wind Speed</h3>
+                <p id="wind">--</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>🌡 Feels Like</h3>
+                <p id="feelsLike">--°C</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>📊 Pressure</h3>
+                <p id="pressure">-- hPa</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h2>📅 5-Day Forecast</h2>
+
+    <div id="forecast" class="forecast-container"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
