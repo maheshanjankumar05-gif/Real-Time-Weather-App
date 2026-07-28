@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Real-Time Weather Forecast</title>
 
+    <link rel="icon" href="images/favicon.png">
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>🌤 Real-Time Weather Forecast</h1>
+        <h1>
+            <i class="fa-solid fa-cloud-sun"></i>
+            Real-Time Weather Forecast
+        </h1>
 
-    <!-- Search Box -->
-    <div class="search-box">
-        <input type="text" id="cityInput" placeholder="Enter City Name">
+        <!-- Search -->
 
-        <button id="searchBtn">🔍 Search</button>
+        <div class="search-box">
 
-        <button id="locationBtn">📍 Current Location</button>
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name...">
 
-        <button id="themeBtn">🌙 Dark Mode</button>
-    </div>
+            <button id="searchBtn" title="Search">
+                <i class="fas fa-search"></i>
+            </button>
 
-    <!-- Loading -->
-    <div id="loading" class="loading" style="display:none;">
-        ⏳ Loading weather data...
-    </div>
+            <button id="locationBtn" title="Current Location">
+                <i class="fas fa-location-dot"></i>
+            </button>
 
-    <!-- Weather Card -->
-    <div class="weather-card">
+            <button id="themeBtn" title="Dark Mode">
+                🌙
+            </button>
 
-        <h2 id="cityName">City Name</h2>
-
-        <img id="weatherIcon" src="" alt="Weather Icon">
-
-        <h1 id="temperature">--°C</h1>
-
-        <p id="description">Weather Description</p>
-
-        <p id="dateTime"></p>
-
-        <div class="sun-info">
-            <p>🌅 Sunrise: <span id="sunrise">--</span></p>
-            <p>🌇 Sunset: <span id="sunset">--</span></p>
         </div>
 
-        <div class="detail-box">
-            <h3>🌍 Air Quality</h3>
-            <p id="aqi">--</p>
+        <!-- Loading -->
+
+        <div id="loading" class="loading">
+            <div class="loader"></div>
+            <p>Loading weather...</p>
         </div>
+
+        <!-- Weather Card -->
+
+        <div class="weather-card">
+
+            <h2 id="cityName">
+                City Name
+            </h2>
+
+            <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon">
+
+            <h1 id="temperature">
+                --°C
+            </h1>
+
+            <p id="description">
+                Weather Description
+            </p>
+
+            <p id="dateTime"></p>
+
+        </div>
+
+        <!-- Weather Details -->
 
         <div class="details">
 
@@ -60,8 +89,8 @@
             </div>
 
             <div class="detail-box">
-                <h3>💨 Wind Speed</h3>
-                <p id="wind">--</p>
+                <h3>💨 Wind</h3>
+                <p id="wind">-- km/h</p>
             </div>
 
             <div class="detail-box">
@@ -74,17 +103,51 @@
                 <p id="pressure">-- hPa</p>
             </div>
 
+            <div class="detail-box">
+                <h3>🌅 Sunrise</h3>
+                <p id="sunrise">--</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>🌇 Sunset</h3>
+                <p id="sunset">--</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>🌍 Air Quality</h3>
+                <p id="aqi">--</p>
+            </div>
+
         </div>
+
+        <!-- Forecast -->
+
+        <h2 class="forecast-title">
+            5-Day Forecast
+        </h2>
+
+        <div
+            id="forecast"
+            class="forecast-container">
+
+        </div>
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                Developed by
+                <strong>Mahesh Anjan Kumar</strong>
+                ❤️
+            </p>
+
+        </footer>
 
     </div>
 
-    <h2>📅 5-Day Forecast</h2>
-
-    <div id="forecast" class="forecast-container"></div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
